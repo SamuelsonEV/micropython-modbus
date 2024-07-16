@@ -391,7 +391,9 @@ def bytes_to_bool(byte_list: bytes, bit_qty: Optional[int] = 1) -> List[bool]:
         # evil hack for missing keyword support in MicroPython format()
         fmt = '{:0' + str(this_qty) + 'b}'
 
-        bool_list.extend([bool(int(x)) for x in fmt.format(byte)])
+        for byte in byte_list:
+            for i in range(8):
+                bool_list.append((byte >> i) & 1 == 1)
 
         bit_qty -= 8
 
