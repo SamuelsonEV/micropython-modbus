@@ -168,7 +168,7 @@ device, connect to a network and install them via `upip` as follows
 ```python
 # with MicroPython version 1.19.1 or newer
 import mip
-mip.install('github:brainelectronics/micropython-modules')
+mip.install('github:SamuelsonEV/micropython-modules')
 
 # before MicroPython version 1.19.1
 import upip
