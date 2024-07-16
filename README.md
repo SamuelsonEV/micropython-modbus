@@ -72,7 +72,7 @@ station.active(True)
 station.connect('SSID', 'PASSWORD')
 time.sleep(1)
 print('Device connected to network: {}'.format(station.isconnected()))
-mip.install('github:brainelectronics/micropython-modbus')
+mip.install('github:SamuelsonEV/micropython-modbus')
 print('Installation completed')
 machine.soft_reset()
 ```
