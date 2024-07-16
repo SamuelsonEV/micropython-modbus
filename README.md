@@ -63,15 +63,15 @@ Inside the [rshell][ref-remote-upy-shell] open a REPL and execute these
 commands inside the REPL
 
 ```python
-import machine
 import network
-import time
 import mip
-station = network.WLAN(network.STA_IF)
-station.active(True)
-station.connect('SSID', 'PASSWORD')
+nic = network.WIZNET5K()
+nic.active(True)
+nic.ifconfig()
+nic.ifconfig("dhcp")
+nic.isconnected()
 time.sleep(1)
-print('Device connected to network: {}'.format(station.isconnected()))
+print('Device connected to network: {}'.format(nic.isconnected()))
 mip.install('github:SamuelsonEV/micropython-modbus')
 print('Installation completed')
 machine.soft_reset()
